@@ -30,8 +30,33 @@ document.addEventListener('DOMContentLoaded', ()=>{
             elemTranslate(korol, deltaX, deltaY, 8, 7);
             
             //4 layer   
-            elemTranslate(sun, deltaX, deltaY, 5, 0);
-            //d
+            elemTranslate(sun, deltaX, deltaY, 1, 0);
         }
     });
+
+    let line1string1 = document.getElementById('string1');
+    let line1string1X = line1string1.offsetLeft;
+    let line1string2 = document.getElementById('string2');
+    let line1string2X = line1string2.offsetLeft;
+    let line2string1 = document.getElementById('string3');
+    let line2string1X = line1string1.offsetLeft;
+    let line2string2 = document.getElementById('string4');
+    let line2string2X = line1string2.offsetLeft;
+    //Бегущая строка
+
+    function lineStep(elem, x) {  
+        if(x <= -line1string1.offsetWidth){
+            x = line1string1.offsetWidth;
+        } else {
+            x -= 2;
+        }
+        elem.style.transform = 'translateX(' + (x - elem.offsetLeft) + 'px)';
+        window.requestAnimationFrame(() => lineStep(elem, x));
+    }
+    window.requestAnimationFrame(() => lineStep(line1string1, line1string1X));
+    window.requestAnimationFrame(() => lineStep(line1string2, line1string2X));
+    window.requestAnimationFrame(() => lineStep(line2string1, line2string1X));
+    window.requestAnimationFrame(() => lineStep(line2string2, line2string2X));
+    //window.requestAnimationFrame(lineStep(string2, line1string2X));
 })
+

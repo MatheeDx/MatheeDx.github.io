@@ -121,6 +121,34 @@ select {
     }
 }
 
+.runing-text {
+    height: 60px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #F54932;
+    width: max-content;
+    text-transform: uppercase;
+    
+}
+.runing-text__wrapper {
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: inherit;
+}
+.runing-text__text {
+    font-family: "Merriweather";
+    font-size: 22px;
+    color: white;
+}
+.runing-text__text1 {
+
+}
+.runing-text__text2 {
+
+}
+
 .header {
     height: 700px;
     max-height: 700px;
