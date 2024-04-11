@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             
             //4 layer   
             elemTranslate(sun, deltaX, deltaY, 5, 0);
+            //d
         }
     });
 })
