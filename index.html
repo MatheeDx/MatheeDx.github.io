@@ -123,12 +123,12 @@
             <div class="members__head">
                 <h2 class="title2 members__title2">Участники турнира</h2>
                 <div class="members__gal-control-menu">
-                    <button class="members__gal-btn members__gal-btn__prev"></button>
-                    <span class="members__gal-counter">3 <span>/ 6</span></span>
-                    <button class="members__gal-btn members__gal-btn__next"></button>
+                    <button onclick="gal.prevSlide()" class="members__gal-btn members__gal-btn__prev"></button>
+                    <span class="members__gal-counter"> <span id="Gal__counter">3</span><span class="span">&nbsp/&nbsp<span id="Gal__lenght">6</span></span></span>
+                    <button onclick="gal.nextSlide()" class="members__gal-btn members__gal-btn__next"></button>
                 </div>
             </div>
-            <main class="gal members_gal">
+            <main id="Gal" class="gal members_gal">
                 <div class="gal__list">
                     <div class="member">
                         <img src="img/ava.png" alt="" class="member__ava">
@@ -182,5 +182,10 @@
         </div>
     </footer>
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gal = new membersGal('Gal');
+        })
+    </script>
 </body>
 </html>

@@ -39,6 +39,7 @@ body {
   font-family: "Golos Text";
   font-weight: normal;
   color: #313131;
+  /* overflow-x: hidden; */
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
@@ -126,12 +127,12 @@ select {
     width: 100%;
     overflow: hidden;
     background-color: #F54932;
-    width: max-content;
+    /* width: max-content; */
     text-transform: uppercase;
     
 }
 .runing-text__wrapper {
-    width: fit-content;
+    width: max-content;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -448,11 +449,8 @@ select {
 .members__gal-btn__prev {
     background-image: url(/img/btn-left.svg);
 }
-.members__gal-counter {
-
-    span {
+.members__gal-counter .span{
         opacity: 0.6;
-    }
 }
 .members__gal-btn__next {
     background-image: url(/img/btn-left.svg);
@@ -464,6 +462,7 @@ select {
 .members_gal {
     margin-top: 60px;
     margin-bottom: 140px;
+    display: flex;
 }
 .gal__list {
     display: flex;
@@ -472,6 +471,9 @@ select {
     gap: 20px;
     position: relative;
     width: fit-content;
+}
+.gal__list__active {
+    transition: transform ease 0.7s;
 }
 .member {
     width: 394px;
