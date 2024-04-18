@@ -12,6 +12,8 @@
 
     <!-- Стили -->
     <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/adapt.css">
+
 
     <title>Шахматный клуб</title>
 </head>
@@ -33,8 +35,8 @@
                     земного шара</span></h1>
                 <p class="header__desc">Оплатите взнос на телеграммы для организации Международного васюкинского турнира по шахматам</p>
                 <div class="header__buttons">
-                    <a href="" class="header__button header__button__first">Поддержать шахматную мысль</a>
-                    <a href="" class="header__button header__button__second">Подробнее о турнире</a>
+                    <a href="#intro" class="header__button header__button__first">Поддержать шахматную мысль</a>
+                    <a href="#stagesSect" class="header__button header__button__second">Подробнее о турнире</a>
                 </div>
             </main>
         </div>
@@ -45,7 +47,7 @@
             <div class="runing-text__text runing-text__text2" id="string2">&nbspДело помощи утопающим — дело рук самих утопающих! • Шахматы двигают вперед не только культуру, но и экономику! • Лед тронулся, господа присяжные заседатели! • </div>
         </div>
     </div>
-    <section class="intro">
+    <section class="intro" id="intro">
         <div class="media-cont intro__media-cont">
             <h3 class="title3 intro__title3">Чтобы поддержать Международный васюкинский турнир посетите лекцию на тему: <span>«Плодотворная дебютная идея»</span></h3>
             <img class="intro__photo" src="/img/mens.png" alt="">
@@ -82,11 +84,11 @@
             </main>
         </div>
     </section>
-    <section class="stages">
+    <section class="stages" id="stagesSect">
         <div class="media-cont stages__media-cont">
             <h2 class="title2 stages__title2">Этапы преображения<br>Васюков<span>Будущие источники обогащения васюкинцев</span></h2>
             <div class="stages__plane"></div>
-            <ul class="stages-wrap">
+            <ul id="stages" class="stages-wrap">
                 <li class="stage">
                     <p class="stage__number">1</p>
                     Строительство железнодорожной магистрали Москва-Васюки
@@ -116,13 +118,18 @@
                     Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн
                 </li>
             </ul>
+            <div class="gal-control-menu stages__gal-control-menu">
+                <button onclick="stages.prevSlide()" class="members__gal-btn members__gal-btn__prev" id="btn__prev"></button>
+                <span class="members__gal-counter"> <span id="Stages__counter">3</span><span class="span">&nbsp/&nbsp<span>5</span></span></span>
+                <button onclick="stages.nextSlide()" class="members__gal-btn members__gal-btn__next" id="btn__next"></button>
+            </div>
         </div>
     </section>
     <section class="members">
         <div class="media-cont members__media-cont">
             <div class="members__head">
                 <h2 class="title2 members__title2">Участники турнира</h2>
-                <div class="members__gal-control-menu">
+                <div class="gal-control-menu members__gal-control-menu  members__gal-control-menu__desktop">
                     <button onclick="gal.prevSlide()" class="members__gal-btn members__gal-btn__prev"></button>
                     <span class="members__gal-counter"> <span id="Gal__counter">3</span><span class="span">&nbsp/&nbsp<span id="Gal__lenght">6</span></span></span>
                     <button onclick="gal.nextSlide()" class="members__gal-btn members__gal-btn__next"></button>
@@ -168,6 +175,11 @@
                     </div>
                 </div>
             </main>
+            <div class="gal-control-menu members__gal-control-menu members__gal-control-menu__mobile">
+                <button onclick="gal.prevSlide()" class="members__gal-btn members__gal-btn__prev"></button>
+                <span class="members__gal-counter"> <span id="Gal__counter">3</span><span class="span">&nbsp/&nbsp<span id="Gal__lenght">6</span></span></span>
+                <button onclick="gal.nextSlide()" class="members__gal-btn members__gal-btn__next"></button>
+            </div>
         </div>
     </section>
     <div class="runing-text">
@@ -184,7 +196,20 @@
     <script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            stages = null;
             gal = new membersGal('Gal');
+            window.addEventListener('resize', () => {
+                if(window.innerWidth <= 375){
+                    if(stages == null)
+                        stages = new stagesGal('stages');
+                } else {
+                    if (stages != null) {
+                        stages.clear();
+                        stages = null;
+                    }
+                }
+            })
+            
         })
     </script>
 </body>

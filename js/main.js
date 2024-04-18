@@ -130,3 +130,50 @@ class membersGal {
         el[0].style.transform = 'translateX(' + (el[1] - el[2]) + 'px)';
     }
 }
+
+class stagesGal {
+    constructor(main) {
+        this.wrapper = document.getElementById(main);
+        this.step = this.wrapper.children[0].offsetWidth + 20;
+        this.currentSlide = 0;
+        this.length = 5;
+        this.counter = document.getElementById('Stages__counter');
+        this.counter.innerText = 1;
+        this.prev = document.getElementById('btn__prev');
+        this.next = document.getElementById('btn__next');
+
+        this.btnProccessing();
+    }
+
+    nextSlide() {
+        if(this.currentSlide < this.length-1){
+            this.currentSlide++;
+            this.wrapper.style.transform = 'translateX(' + (-this.step * this.currentSlide) + 'px)'
+        }
+        this.counter.innerText = this.currentSlide +1;
+        this.btnProccessing(); 
+    }
+
+    prevSlide() {
+        if(this.currentSlide > 0){
+            this.currentSlide--;
+            this.wrapper.style.transform = 'translateX(' + (-this.step * this.currentSlide) + 'px)'
+        }
+        this.counter.innerText = this.currentSlide +1;
+        this.btnProccessing();
+    }
+
+    btnProccessing() {
+        if(this.currentSlide == 0)
+            this.prev.classList.add('members__gal-btn__disabled');
+        else if(this.currentSlide == this.length-1)
+            this.next.classList.add('members__gal-btn__disabled');
+        else{
+            this.prev.classList.remove('members__gal-btn__disabled');
+            this.next.classList.remove('members__gal-btn__disabled');
+        }
+    }
+    clear() {
+        this.wrapper.style.transform = 'none';
+    }
+}

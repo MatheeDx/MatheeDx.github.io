@@ -39,7 +39,13 @@ body {
   font-family: "Golos Text";
   font-weight: normal;
   color: #313131;
-  /* overflow-x: hidden; */
+  
+  
+}
+
+html {
+    scroll-behavior: smooth;
+
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
@@ -413,6 +419,7 @@ select {
     padding-right: 310px;
 }
 
+
 .members {
 }
 .members__media-cont {
@@ -426,11 +433,20 @@ select {
 }
 .members__title2 {
 }
-.members__gal-control-menu {
+.gal-control-menu {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 14px;
+}
+.members__gal-control-menu {
+
+}
+.members__gal-control-menu__desktop {
+    
+}
+.members__gal-control-menu__mobile {
+    display: none;
 }
 .members__gal-btn {
     width: 44px;
@@ -474,6 +490,9 @@ select {
 }
 .gal__list__active {
     transition: transform ease 0.7s;
+}
+.stages__gal-control-menu {
+    display: none;
 }
 .member {
     width: 394px;
