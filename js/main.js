@@ -132,7 +132,14 @@ class membersGal {
         this.sliders.forEach(el => {
             el[0].style.transform = 'translateX(' + (el[1] - el[2]) + 'px)';
         })
-        this.counter.innerHTML = 1;
+        if(parseInt(this.viewport.offsetWidth / this.slider.children[0].offsetWidth) == 3)
+            this.counterStart = 3;
+        else if (parseInt(this.viewport.offsetWidth / this.slider.children[0].offsetWidth) == 2)
+            this.counterStart = 2;
+        else if (parseInt(this.viewport.offsetWidth / this.slider.children[0].offsetWidth) == 1)
+            this.counterStart = 1;
+
+        this.counterEl.innerText = this.counterCurr = this.counterStart;
     }
 
     nextSlide() {

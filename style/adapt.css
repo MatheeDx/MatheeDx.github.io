@@ -10,11 +10,9 @@
         z-index: -1;
     }
     .stages-wrap {
-        display: flex;
         display: grid;
         grid-auto-flow: column;
         grid-template-rows: 158px 142px;
-        grid-template-columns: repeat(5, 335px);
         grid-template-columns: repeat(5, 415px);
         flex-direction: row;
         justify-items: center;
@@ -75,35 +73,11 @@
         max-height: none;
         height: 776px;
     }
-    .header__filter {
-    }
-    .media-cont {
-    }
-    .header__media-cont {
-    }
-    .BG {
-    }
     .header__BG {
         transform-origin: center;
         transform: scale(0.45);
         bottom: -73%;
         right: -16%;
-    }
-    .BG__elem {
-    }
-    .BG__elem__sun {
-    }
-    .BG__elem__ferz {
-    }
-    .BG__elem__korol {
-    }
-    .BG__elem__city {
-    }
-    .BG__elem__kon {
-    }
-    .BG__elem__peshka {
-    }
-    .header__logo {
     }
     .header__main-info {
         margin-top: 40px;
@@ -111,8 +85,6 @@
     }
     .title1 {
         font-size: 36px;
-    }
-    .header__title1 {
     }
     .header__desc {
         text-align: left;
@@ -125,24 +97,9 @@
         width: 95vw;
         height: 47px;
     }
-    .header__button__first {
-    }
     .header__button__second {
         border: none;
         background-color: #FFFFFFE6;
-        o
-    }
-    .runing-text {
-    }
-    .runing-text__wrapper {
-    }
-    .runing-text__text {
-    }
-    .runing-text__text1 {
-    }
-    .runing-text__text2 {
-    }
-    .intro {
     }
     .intro__media-cont {
         flex-direction: column;
@@ -153,37 +110,17 @@
     .intro__title3 {
         width: auto;
     }
-    .intro__photo {
-    }
-    .main-info {
-    }
     .main-info__media-cont {
         flex-direction: column;
-    }
-    .main-info__photo {
     }
     .main-info__main-block {
         width: auto;
     }
-    .main-info__title3 {
-    }
-    .table-info {
-    }
-    .table-info__row {
-    }
-    .table-info__cell {
-    }
-    .table-info__discount {
-    }
     .table-info__cell:not(:last-child) {
         width: auto;
     }
-    .main-info__faq {
-    }
     .stages {
         overflow-x: hidden;
-    }
-    .stages__media-cont {
     }
     .title2 {
         font-size: 36px;
@@ -199,58 +136,9 @@
         top: 202px;
     }
     .stages-wrap {
-        display: flex;
-        display: grid;
-        grid-auto-flow: column;
-        grid-template-rows: 158px 142px;
         grid-template-columns: repeat(5, 335px);
-        flex-direction: row;
-        justify-items: center;
-        row-gap: 0;
-        height: 300px;
-        position: relative;
         left: 0;
         transition: transform ease 0.7s;
-    }
-    .stage:not(:nth-child(2), :nth-child(5)) {
-        padding-top: 62px;
-    }
-    .stage:nth-child(3){
-        grid-area: 1 / 2 / 3 / 3;
-        background: url(/img/stage3-bg.png) center no-repeat;
-    }
-    .stage:nth-child(6){
-        grid-area: 1 / 4 / 3 / 5;
-        background: url(/img/stage7-bg.png) center no-repeat;
-        padding-right: 24px;
-    }
-    .stage:nth-child(7){
-        grid-area: 1 / 5 / 3 / 6;
-        background: url(/img/stage7-bg.png) center no-repeat;
-        padding-right: 24px;
-    }
-    .stage {
-        background-size: cover !important;
-        font-size: 18px;
-        padding-right: 24px;
-    }
-    .stages__gal-control-menu {
-        display: flex;
-        width: fit-content;
-        margin: 0 auto;
-        margin-top: 28px;
-    }
-    .stage__number {
-    }
-    .members {
-    }
-    .members__media-cont {
-    }
-    .members__head {
-    }
-    .members__title2 {
-    }
-    .members__gal-control-menu {
     }
     .members__gal-control-menu__desktop {
         display: none;
@@ -261,23 +149,8 @@
         margin: 0 auto;
         margin-bottom: 100px;
     }
-    .members__gal-btn {
-    }
-
-    .members__gal-btn__prev {
-    }
-    .members__gal-counter {
-    }
-    .span {
-    }
-    .members__gal-btn__next {
-    }
-    .gal {
-    }
     .members_gal {
         margin-bottom: 40px;
-    }
-    .gal__list {
     }
     .member {
         width: 335px;
@@ -285,16 +158,6 @@
     .member__ava {
         width: 244px;
         height: 244px;
-    }
-    .member__name {
-    }
-    .member__tag {
-    }
-    .member__desc {
-    }
-    .footer {
-    }
-    .footer__media-cont {
     }
 
 }
