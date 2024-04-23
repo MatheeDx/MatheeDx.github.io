@@ -367,6 +367,7 @@ select {
 .stages {
     padding-top: 200px;
     padding-bottom: 200px;
+    overflow-x: hidden;
 }
 .stages__media-cont {
     position: relative;
