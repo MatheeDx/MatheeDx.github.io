@@ -296,6 +296,9 @@ select {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 30px;
 }
 .intro__title3 {
     width: 754px;
@@ -310,11 +313,14 @@ select {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .main-info__photo {
     transform: translate(-27px, -47px);
 }
 .main-info__main-block {
+    width: 690px;
 }
 .main-info__title3 {
     margin-bottom: 60px;
@@ -390,6 +396,7 @@ select {
     grid-template-columns: repeat(3, 33%);
     grid-template-rows: 112px 112px 136px;
     gap: 20px;
+    z-index: -2;
 }
 .stage {
     background: url(/img/stage-bg.png) center no-repeat;
@@ -419,7 +426,9 @@ select {
     background: url(/img/stage7-bg.png) center no-repeat;
     padding-right: 310px;
 }
-
+.members__gal-btn__disabled {
+    background-color: #D6D6D6 !important;
+}
 
 .members {
 }

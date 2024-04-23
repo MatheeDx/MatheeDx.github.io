@@ -69,9 +69,19 @@ class membersGal {
         this.length = this.slider.childElementCount;
         this.membersList = [];
         this.width = this.slider.offsetWidth + parseFloat(window.getComputedStyle(this.slider).gap);
-        this.counter = document.getElementById('Gal__counter');
-        this.counter.innerHTML = 1;
+        this.counterEl = document.getElementById('Gal__counter');
+        
+        this.counterStart;
         document.getElementById('Gal__lenght').innerText = this.length;
+
+        if(parseInt(this.viewport.offsetWidth / this.slider.children[0].offsetWidth) == 3)
+            this.counterStart = 3;
+        else if (parseInt(this.viewport.offsetWidth / this.slider.children[0].offsetWidth) == 2)
+            this.counterStart = 2;
+        else if (parseInt(this.viewport.offsetWidth / this.slider.children[0].offsetWidth) == 1)
+            this.counterStart = 1;
+
+        this.counterEl.innerText = this.counterCurr = this.counterStart;
 
         this.step = this.slider.children[0].offsetWidth + parseFloat(window.getComputedStyle(this.slider).gap);
         
@@ -99,6 +109,32 @@ class membersGal {
         this.autoSlider = setInterval(() => this.nextSlide(), 4000);
     }
 
+    counterProc(step) {
+        if (this.counterCurr + step > this.length)
+            this.counterCurr = 1;
+        else if (this.counterCurr + step < 1)
+            this.counterCurr = this.length;
+        else
+            this.counterCurr += step;
+
+        this.counterEl.innerText = this.counterCurr;
+    }
+
+    refresh() {
+        this.width = this.slider.offsetWidth + parseFloat(window.getComputedStyle(this.slider).gap);
+        this.step = this.slider.children[0].offsetWidth + parseFloat(window.getComputedStyle(this.slider).gap);
+        this.sliders[0][1] = -this.width;
+        this.sliders[0][2] = 0;
+        this.sliders[1][1] = 0;
+        this.sliders[1][2] = this.width;
+        this.sliders[2][1] = this.width;
+        this.sliders[2][2] = this.width*2;
+        this.sliders.forEach(el => {
+            el[0].style.transform = 'translateX(' + (el[1] - el[2]) + 'px)';
+        })
+        this.counter.innerHTML = 1;
+    }
+
     nextSlide() {
         this.sliders.forEach(el => {
             el[1] -= this.step;
@@ -106,6 +142,7 @@ class membersGal {
             this.mover(el);
             setTimeout(() => el[0].classList.add('gal__list__active'), 700)
         })
+        this.counterProc(1)
     }
 
     prevSlide() {
@@ -115,6 +152,7 @@ class membersGal {
             this.mover(el);
             setTimeout(() => el[0].classList.add('gal__list__active'), 700)
         })
+        this.counterProc(-1)
     }
     controller(el) {
             if (el[1] <= -this.width * 2){
@@ -173,6 +211,12 @@ class stagesGal {
             this.next.classList.remove('members__gal-btn__disabled');
         }
     }
+
+    refresh() {
+        this.step = this.wrapper.children[0].offsetWidth + 20;
+        this.wrapper.style.transform = 'translateX(' + (-this.step * this.currentSlide) + 'px)'
+    }
+
     clear() {
         this.wrapper.style.transform = 'none';
     }

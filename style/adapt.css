@@ -2,6 +2,68 @@
     .media-cont {
         width: 90%;
     }
+
+    .stages__plane {
+        top: -25px;
+        transform-origin: left;
+        transform: scale(0.88);
+        z-index: -1;
+    }
+    .stages-wrap {
+        display: flex;
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-rows: 158px 142px;
+        grid-template-columns: repeat(5, 335px);
+        grid-template-columns: repeat(5, 415px);
+        flex-direction: row;
+        justify-items: center;
+        row-gap: 0;
+        height: 300px;
+        position: relative;
+        left: calc(50% - 415px/2);
+        transition: transform ease 0.7s;
+    }
+    .stage:not(:nth-child(2), :nth-child(5)) {
+        padding-top: 62px;
+    }
+    .stage:nth-child(3){
+        grid-area: 1 / 2 / 3 / 3;
+        background: url(/img/stage3-bg.png) center no-repeat;
+    }
+    .stage:nth-child(6){
+        grid-area: 1 / 4 / 3 / 5;
+        background: url(/img/stage7-bg.png) center no-repeat;
+        padding-right: 24px;
+    }
+    .stage:nth-child(7){
+        grid-area: 1 / 5 / 3 / 6;
+        background: url(/img/stage7-bg.png) center no-repeat;
+        padding-right: 24px;
+    }
+    .stage {
+        background-size: cover !important;
+        font-size: 18px;
+        padding-right: 24px;
+    }
+    .stages__gal-control-menu {
+        display: flex;
+        width: fit-content;
+        margin: 0 auto;
+        margin-top: 28px;
+    }
+}
+
+@media (max-width: 960px) {
+    .stages__plane {
+        top: 44px;
+    }
+}
+
+@media (max-width: 780px) {
+    .stages__plane {
+        top: 124px;
+    }
 }
 
 @media (max-width: 560px) {
@@ -28,9 +90,6 @@
         right: -16%;
     }
     .BG__elem {
-    }
-    .stages__gal-control-menu {
-        display: flex;
     }
     .BG__elem__sun {
     }
@@ -104,6 +163,7 @@
     .main-info__photo {
     }
     .main-info__main-block {
+        width: auto;
     }
     .main-info__title3 {
     }
@@ -137,8 +197,6 @@
     }
     .stages__plane {
         top: 202px;
-        transform-origin: left;
-        transform: scale(0.88);
     }
     .stages-wrap {
         display: flex;
@@ -151,7 +209,6 @@
         row-gap: 0;
         height: 300px;
         position: relative;
-        z-index: -1;
         left: 0;
         transition: transform ease 0.7s;
     }
@@ -178,7 +235,7 @@
         padding-right: 24px;
     }
     .stages__gal-control-menu {
-        
+        display: flex;
         width: fit-content;
         margin: 0 auto;
         margin-top: 28px;
@@ -206,9 +263,7 @@
     }
     .members__gal-btn {
     }
-    .members__gal-btn__disabled {
-        background-color: #D6D6D6 !important;
-    }
+
     .members__gal-btn__prev {
     }
     .members__gal-counter {

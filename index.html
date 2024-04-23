@@ -198,12 +198,16 @@
         document.addEventListener('DOMContentLoaded', () => {
             stages = null;
             gal = new membersGal('Gal');
-            if(stages == null)
-                stages = new stagesGal('stages');
+            if(window.innerWidth <= 1220)
+                if(stages == null)
+                    stages = new stagesGal('stages');
             window.addEventListener('resize', () => {
-                if(window.innerWidth <= 600){
+                gal.refresh();
+                if(window.innerWidth <= 1220){
                     if(stages == null)
                         stages = new stagesGal('stages');
+                    else
+                        stages.refresh();
                 } else {
                     if (stages != null) {
                         stages.clear();
