@@ -70,9 +70,11 @@ class membersGal {
         this.membersList = [];
         this.width = this.slider.offsetWidth + parseFloat(window.getComputedStyle(this.slider).gap);
         this.counterEl = document.getElementById('Gal__counter');
+        this.counterEl2 = document.getElementById('Gal__counter2');
         
         this.counterStart;
         document.getElementById('Gal__lenght').innerText = this.length;
+        document.getElementById('Gal__lenght2').innerText = this.length;
 
         if(parseInt(this.viewport.offsetWidth / this.slider.children[0].offsetWidth) == 3)
             this.counterStart = 3;
@@ -82,6 +84,7 @@ class membersGal {
             this.counterStart = 1;
 
         this.counterEl.innerText = this.counterCurr = this.counterStart;
+        this.counterEl2.innerText = this.counterCurr;
 
         this.step = this.slider.children[0].offsetWidth + parseFloat(window.getComputedStyle(this.slider).gap);
         
@@ -118,6 +121,7 @@ class membersGal {
             this.counterCurr += step;
 
         this.counterEl.innerText = this.counterCurr;
+        this.counterEl2.innerText = this.counterCurr;
     }
 
     refresh() {
